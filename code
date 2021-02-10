@@ -1,0 +1,57 @@
+# snake-water-gun-python
+import random
+
+while True:
+    option1 = ["snake", "water", "gun"]
+    print(option1)
+    user_enter1 = input("enter your element:- ")
+    com1 = random.choice(option1)
+    rules = ["snake drinks water", " gun kill snake ", "gun is drawn in water"]
+
+
+    def draw1():
+        print(f"draw!, because user also choosed {com1}")
+
+
+    def wins1():
+        print(f"you won , because com choosed {com1} and you choosed {user_enter1}")
+
+
+    def losses1():
+        print(f"com wins , because com choosed {com1} and you choosed {user_enter1} ")
+
+
+    if user_enter1 in option1:
+        if user_enter1 == com1:
+            draw1()
+        elif user_enter1 == option1[0] and com1 == option1[1]:
+            wins1()
+            print(rules[0])
+
+        elif user_enter1 == option1[0] and com1 == option1[2]:
+            losses1()
+            print(rules[1])
+
+        elif user_enter1 == option1[1] and com1 == option1[0]:
+            losses1()
+            print(rules[0])
+
+        elif user_enter1 == option1[1] and com1 == option1[2]:
+            wins1()
+            print(rules[2])
+
+        elif user_enter1 == option1[2] and com1 == option1[0]:
+            wins1()
+            print(rules[1])
+
+        elif user_enter1 == option1[2] and com1 == option1[1]:
+            losses1()
+            print(rules[2])
+
+
+
+        break
+
+    else:
+        print(f"wrong entry , enter any 1 option, what present in {option1} with exact spellings")
+        print(" ","\n please enter again")
